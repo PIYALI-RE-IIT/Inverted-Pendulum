@@ -38,38 +38,38 @@ $$\sigma = mL^2(M+m cos^2\theta)+I(M+m)$$
 **State Space Representation**
 
 $$\begin{gather}
-\begin{bmatrix}	\dot{x}\\ \ddot{x}\\ \dot{\theta}\\ \ddot{\theta}\\	\end{bmatrix}
+\begin{bmatrix}	\dot{x}\\\\ \ddot{x}\\\\ \dot{\theta}\\\\ \ddot{\theta}\\\\	\end{bmatrix}
 =
 \begin{bmatrix} 
-0 & 1& 0 & 0 \\
+0 & 1& 0 & 0 \\\\
 
-0 & \frac{-(J+mL^2)b}{\sigma'} & \frac{m^2 L^2 g}{\sigma'}  & 0   \\
+0 & \frac{-(J+mL^2)b}{\sigma'} & \frac{m^2 L^2 g}{\sigma'}  & 0   \\\\
 				
-0 & \frac{mLb}{\sigma'} & \frac{mgL(m+M)}{\sigma'} & 0 \\				
+0 & \frac{mLb}{\sigma'} & \frac{mgL(m+M)}{\sigma'} & 0 \\\\				
 				
 \end{bmatrix}
 				
 \begin{bmatrix}
-x \\
+x \\\\
 				
-\dot{x} \\
+\dot{x} \\\\
 				
-\theta \\
+\theta \\\\
 				
-\dot{\theta} \\					
+\dot{\theta} \\\\					
 				
 \end{bmatrix}
 				
 +
 				
 \begin{bmatrix}
-0 \\
+0 \\\\
 				
-\frac{-(J+mL^2)}{\sigma'} \\
+\frac{-(J+mL^2)}{\sigma'} \\\\
 				
-0 \\
+0 \\\\
 				
-\frac{mL}{\sigma'} \\					
+\frac{mL}{\sigma'} \\\\					
 				
 \end{bmatrix}
 F			
@@ -81,18 +81,18 @@ F
 y = 
 				
 \begin{bmatrix}
-1 & 0 & 0 & 0\\
+1 & 0 & 0 & 0\\\\
 0 & 0 & 1 & 0
 \end{bmatrix}
 				
 \begin{bmatrix}
-x \\
+x \\\\
 				
-\dot{x} \\
+\dot{x} \\\\
 				
-\theta \\
+\theta \\\\
 				
-\dot{\theta} \\					
+\dot{\theta} \\\\					
 				
 \end{bmatrix}
 				
@@ -158,32 +158,32 @@ $$s^5+p_1s^4 +p_2s^3 +p_3s^2+p_4s +p_5 = 0$$
 $$\begin{gather}
 \begin{bmatrix}
 				
--b_1 & 0 & 0 & b_2 & 0 & 0 \\
+-b_1 & 0 & 0 & b_2 & 0 & 0 \\\\
 				
-0  & -b_1 & 0 & 0 & b_2 & 0 \\
+0  & -b_1 & 0 & 0 & b_2 & 0 \\\\
 				
-a^2b_1 & 0 & -b_1 & 0 & 0 & b_2\\
+a^2b_1 & 0 & -b_1 & 0 & 0 & b_2\\\\
 				
-0 & a^2b_1 & 0 & 0 & 0 & 0\\
+0 & a^2b_1 & 0 & 0 & 0 & 0\\\\
 				
-0 & 0 & a^2b_1 & 0 & 0 & 0 \\
+0 & 0 & a^2b_1 & 0 & 0 & 0 \\\\
 								
 \end{bmatrix}
 \begin{bmatrix}
-k^1_d\\
-k^1_p \\
-k^1_i\\
-k^2_d\\
-k^2_p\\
-k^2_i\\				
+k^1_d\\\\
+k^1_p \\\\
+k^1_i\\\\
+k^2_d\\\\
+k^2_p\\\\
+k^2_i\\\\				
 \end{bmatrix}
 =
 \begin{bmatrix}
-p_1\\
-p_2 + a^2\\
-p_3\\
-p_4\\
-p_5\\				
+p_1\\\\
+p_2 + a^2\\\\
+p_3\\\\
+p_4\\\\
+p_5\\\\				
 \end{bmatrix}
 \end{gather}$$
 				
