@@ -44,52 +44,54 @@ Linearising equations (1) and (2) for small angle of <span class="fontCss2">&the
 
 <b>State Space Representation</b>
 
-$$
-\left[\begin{array}{cc}
-\dot{x}\\
-\ddot{x}\\
-\dot{\theta}\\
-\ddot{\theta}\\
+$$ \left[\begin{array}{cc}
+\dot{x}\newline
+\ddot{x}\newline
+\dot{\theta}\newline
+\ddot{\theta}\newline
 \end{array}\right] =
 \left[\begin{array}{cc}
-0 & 1 & 0 & 0 \\
-0 & \frac{-(J+mL^2)b}{\sigma'} & \frac{m^2 L^2 g}{\sigma'} & 0 \\
-0 & 0 & 0 & 1 \\
-0 & \frac{- mLb}{\sigma'} & \frac{mgL(m+M)}{\sigma'} & 0 \\
+0 & 1 & 0 & 0 \newline
+0 & \frac{-(J+mL^2)b}{\sigma'} & \frac{m^2 L^2 g}{\sigma'} & 0 \newline
+0 & 0 & 0 & 1 \newline
+0 & \frac{- mLb}{\sigma'} & \frac{mgL(m+M)}{\sigma'} & 0 \newline
 \end{array}\right]
 \left[\begin{array}{cc}
-x \\
-\dot{x} \\
-\theta \\
-\dot{\theta} \\
+x \newline
+\dot{x} \newline
+\theta \newline
+\dot{\theta} \newline
 \end{array}\right] +
 \left[\begin{array}{cc}
-0 \\
-\frac{(J+mL^2)}{\sigma'} \\
-0 \\
-\frac{mL}{\sigma'} \\
-\end{array}\right] \ F....(3)$$
+0 \newline
+\frac{(J+mL^2)}{\sigma'} \newline
+0 \\\
+\frac{mL}{\sigma'} \newline
+\end{array}\right] \ F....(3) $$
 
 
-$$y = \ \left[\begin{array}{cc}
-1 & 0 & 0 & 0\\
+$$ y = \ \left[\begin{array}{cc}
+1 & 0 & 0 & 0\newline
 0 & 0 & 1 & 0
 \end{array}\right]
 \left[\begin{array}{cc}
-x \\
-\dot{x} \\
-\theta \\
-\dot{\theta} \\
-\end{array}\right] \ ....(4)$$
+x \newline
+\dot{x} \newline
+\theta \newline
+\dot{\theta} \newline
+\end{array}\right] \ ....(4) $$
 
 
-$$where \ x, \ \dot{x}, \ \theta \ and \  \dot{θ} \ are \ the \ states \ and \ y \ is \ the \ output \ vector,$$
+$$where \ x, \ \dot{x}, \ \theta \ and \  \dot{θ} \ are \ the \ states$$
+
+and <span style="font-family:'Georgia';font-weight:400;font-style:italic">y</span> is the output vector,
 
 $$\sigma' = J(M+m) + MmL^2$$
 
-<p><b>Plant Parameter</b>:</p><br/>
 
-<table class="table table-bordered text-center table-striped ">
+<p><b>Plant Parameter</b>:</p><br/>
+<center>
+<table class="table  text-center table-striped ">
 <tr >
 <th><b>Parameter</b></th>
 <th><b>Value</b></th>				
@@ -139,6 +141,7 @@ $$\sigma' = J(M+m) + MmL^2$$
 <th>&theta;&leq;0.1 rad</th>				
 </tr>
 </table>
+</center>
 <br/>
 Next, substituting the values of <span class="fontCss2">M, L, J</span>, <span class="fontCss">m</span> and <span class="fontCss">g</span> in equations (3) and (4) and neglecting the friction coefficient <span class="fontCss">b</span> (which is very small compared to other parameters) the
 following transfer functions are obtained<br/>
@@ -194,7 +197,7 @@ $$1 - (\frac{b_1}{s^2}\frac{k^1_d s^2 +k^1_p s +k^1_i}{s})+ (\frac{b_2}{s^2 - a^
 
 which yields 
 
-$$s^5 + ( -b_1 k^1_d + b_2 k^2_d )s^4 + ( -a^2 - b_1 k^1_p + b_2 k^2_i )s^3 + ( -b_1 k^1_i + a^2b_1k^1_d + b_2k^2_i )s^2 + ( a^2b_1k^1_p )s + ( a^2b_1k^1_i ) = 0....(13)$$
+$$s^5 + ( -b_1 k^1_d + b_2 k^2_d )s^4 + ( -a^2 - b_1 k^1_p + b_2 k^2_p )s^3 + ( -b_1 k^1_i + a^2b_1k^1_d + b_2k^2_i )s^2 + ( a^2b_1k^1_p )s + ( a^2b_1k^1_i ) = 0....(13)$$
 
 Since the above characteristic equation is of fifth order, let the desired characteristic equation be
 
@@ -204,26 +207,26 @@ Comparing the coefficients of (13) and (14) the following matrix equation is obt
 
 
 $$\left[\begin{array}{cc}
--b_1 & 0 & 0 & b_2 & 0 & 0 \\
-0 & -b_1 & 0 & 0 & b_2 & 0 \\
-a^2b_1 & 0 & -b_1 & 0 & 0 & b_2\\
-0 & a^2b_1 & 0 & 0 & 0 & 0\\
-0 & 0 & a^2b_1 & 0 & 0 & 0 \\
+-b_1 & 0 & 0 & b_2 & 0 & 0 \newline
+0 & -b_1 & 0 & 0 & b_2 & 0 \newline
+a^2b_1 & 0 & -b_1 & 0 & 0 & b_2\newline
+0 & a^2b_1 & 0 & 0 & 0 & 0\newline
+0 & 0 & a^2b_1 & 0 & 0 & 0 \newline
 \end{array}\right]
 \left[\begin{array}{cc}
-k^1_d\\
-k^1_p \\
-k^1_i\\
-k^2_d\\
-k^2_p\\
-k^2_i\\
+k^1_d\newline
+k^1_p \newline
+k^1_i\newline
+k^2_d\newline
+k^2_p\newline
+k^2_i\newline
 \end{array}\right] =
 \left[\begin{array}{cc}
-p_1\\
-p_2 + a^2\\
-p_3\\
-p_4\\
-p_5\\
+p_1\newline
+p_2 + a^2\newline
+p_3\newline
+p_4\newline
+p_5\newline
 \end{array}\right] \ .....(15)$$
 
 
@@ -256,20 +259,20 @@ value in (3) and (4) and then comparing these equations with (16) we get,
 
 
 $$A = \ \left[\begin{array}{cc}
-0 & 1 & 0 & 0\\
-0 & 0 & 0.238 & 0 \\
-0 & 0 & 0 & 1\\
-0 & 0 & 6.807 & 0\\
+0 & 1 & 0 & 0\newline
+0 & 0 & 0.238 & 0 \newline
+0 & 0 & 0 & 1\newline
+0 & 0 & 6.807 & 0\newline
 \end{array}\right],
 B = \ \left[\begin{array}{cc}
-0\\
-0.3894\\
-0\\
-0.2638\\
+0\newline
+0.3894\newline
+0\newline
+0.2638\newline
 \end{array}\right] \times  15,
 C = \ \left[\begin{array}{cc}
-1 & 0 & 0 & 0\\
-0 & 0 & 1 & 0 \\
+1 & 0 & 0 & 0\newline
+0 & 0 & 1 & 0 \newline
 \end{array}\right] \ .....(20)$$
 
 
@@ -293,26 +296,26 @@ dominant one amongst these four poles, the coefficients of (14) are obtained as,
 Next, by substituting these <span class="fontCss">p</span><sub>1</sub>, <span class="fontCss">p<sub>2</sub>, <span class="fontCss">p</span><sub>3</sub>, <span class="fontCss">p</span><sub>4</sub>, <span class="fontCss">p</span><sub>5</sub> and <span class="fontCss">b</span><sub>1</sub>, <span class="fontCss">b</span><sub>2</sub>, a</span> obtained from (7), (8) in (15), we get
 
 $$\left[\begin{array}{cc}
--5.841 & 0 & 0 & 3.957 & 0 & 0\\
-0 & -5.841 & 0 & 0 & 3.957 & 0\\
-39.759 & 0 & -5.841 & 0 & 0 & 3.957\\
-0 & 39.759 & 0 & 0 & 0 & 0\\
-0 & 0 & 39.759 & 0 & 0 & 0\\
+-5.841 & 0 & 0 & 3.957 & 0 & 0\newline
+0 & -5.841 & 0 & 0 & 3.957 & 0\newline
+39.759 & 0 & -5.841 & 0 & 0 & 3.957\newline
+0 & 39.759 & 0 & 0 & 0 & 0\newline
+0 & 0 & 39.759 & 0 & 0 & 0\newline
 \end{array}\right]
 \left[\begin{array}{cc}
-k^1_d\\
-k^1_p \\
-k^1_i\\
-k^2_d\\
-k^2_p\\
-k^2_i\\
+k^1_d\newline
+k^1_p \newline
+k^1_i\newline
+k^2_d\newline
+k^2_p\newline
+k^2_i\newline
 \end{array}\right] =
 \left[\begin{array}{cc}
-26.4\\
-225.5\\
-871.3\\
-1721.8\\
-1343.7\\
+26.4\newline
+225.5\newline
+871.3\newline
+1721.8\newline
+1343.7\newline
 \end{array}\right] \ .....(22)$$
 
 				
