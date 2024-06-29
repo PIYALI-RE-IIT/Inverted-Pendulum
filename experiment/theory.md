@@ -4,7 +4,7 @@ The inverted cart–pendulum is an example of under-actuated, non-minimum phase 
 The first step in the analysis of control system is to derive its mathematical model to understand the working of the complete system.
 <br><br>
 
-<h2>The Plant (Pendulum-Cart):</h2><br/>
+<h2>The Plant (Pendulum-Cart)</h2><br/>
 <b>Pendulum set description</b><br/>
 
 The pendulum setup consists of a cart moving along the 1 metre length track. The cart has a shaft to which two pendulums are attached and are able to rotate freely. The cart can move back and forth causing the pendulums to swing. The movement of the cart is caused by pulling the belt in two directions by the dc motor attached at the end of the rail. By applying a voltage to the motor the force is controlled with which the cart is pulled. The value of the force depends on the value of the control voltage. The voltage is the control signal. The two variables that are read from the pendulum (using optical encoders) are the pendulum position (angle) and the cart position on the rail. The controller’s task will be to change the dc motor voltage depending on these two variables in such a way that the desired control task is fulfilled (stabilizing in an upright
@@ -16,7 +16,7 @@ The next section explains the modelling process of the pendulum.
 <b>Fig. 1. Digital Pendulum mechanical unit</b> 
 </div><br>
 
-<b>Pendulum Model :</b><br/>
+<b>Pendulum Model</b><br/>
 Every control project starts with the plant modelling. The phenomenological model of the pendulum is presented in Fig. 2. The phenomenological model of the pendulum is nonlinear, meaning that at least one of the states (<span class="fontCss">x</span> and its derivative or <span class="fontCss2">&theta;</span> and its derivative) is an argument of a nonlinear function (<span class="fontCss">x</span> – position of cart (m), <span class="fontCss2">&theta;</span> – angle of the pendulum with respect to vertical (rad)). For such a model to be presented as a transfer function (a form of linear plant dynamics representation used in control engineering), it has to be linearised.<br>
 
 <div align="center">				
@@ -34,9 +34,9 @@ i) Linear motion of the cart in the X – axis.<br/>
 ii) Rotation of the pendulum about the X –Y plane.<br/>
 The equations of motion are described by –
 
-$$\ddot{\theta}=\frac{mL}{\sigma}\{[F-b\dot{x}]cos\theta - mL(\dot{\theta})^2 \ cos\theta \ sin\theta + ( m+M )g \ sin\theta\}....(1)$$
+$$\ddot{\theta}=\frac{mL}{\sigma}\{[F-b\dot{x}]cos\theta - mL(\dot{\theta})^2 \ cos\theta \ sin\theta + ( m+M )g \ sin\theta\} \tag 1$$
 
-$$\ddot{x} = \frac{1}{\sigma}\{(J+mL^2)[ F - b\dot{x} - mL(\dot{\theta})^2 sin\theta ] + mL^2g \ sin\theta \ cos\theta \}....(2)$$
+$$\ddot{x} = \frac{1}{\sigma}\{(J+mL^2)[ F - b\dot{x} - mL(\dot{\theta})^2 sin\theta ] + mL^2g \ sin\theta \ cos\theta \} \tag 2$$
 
 $$\sigma = mL^2( M + m cos^2\theta ) + J ( M + m )$$
 
@@ -67,7 +67,7 @@ x \newline
 \frac{(J+mL^2)}{\sigma'} \newline
 0 \\\
 \frac{mL}{\sigma'} \newline
-\end{array}\right] \ F....(3) $$
+\end{array}\right] \ F \tag 3 $$
 
 
 $$ y = \ \left[\begin{array}{cc}
@@ -79,17 +79,17 @@ x \newline
 \dot{x} \newline
 \theta \newline
 \dot{\theta} \newline
-\end{array}\right] \ ....(4) $$
+\end{array}\right] \ \tag 4 $$
 
-
-$$where \ x, \ \dot{x}, \ \theta \ and \  \dot{θ} \ are \ the \ states$$
+where
+$$x, \ \dot{x}, \ \theta \ and \  \dot{θ} \ are \ the \ states$$
 
 and <span style="font-family:'Georgia';font-weight:400;font-style:italic">y</span> is the output vector,
 
 $$\sigma' = J(M+m) + MmL^2$$
 
 
-<p><b>Plant Parameter</b>:</p><br/>
+<p><b>Plant Parameter</b></p><br/>
 <center>
 <table class="table  text-center table-striped ">
 <tr >
@@ -148,13 +148,13 @@ following transfer functions are obtained<br/>
 
 $$\frac{X(s)}{F(s)} = \frac{( J + mL^2 )s^2 - mgL}{s^2((J( m + M ) + MmL^2)s^2 - mgL ( M + m ))}$$
 
-$$= \frac{0.3894s^2 - 2.6506}{s^2(s^2 - 6.807)} \approx \frac{0.3894}{s^2}...(5)$$
+$$= \frac{0.3894s^2 - 2.6506}{s^2(s^2 - 6.807)} \approx \frac{0.3894}{s^2} \tag 5$$
 
 $$\frac{\theta(s)}{F(s)} = \frac{mLs^2}{s^2((J( m + M ) + MmL^2)s^2 - mgL ( M + m ))}$$
 
 $$= \frac{0.2638s^2}{s^2(s^2 - 6.807)}$$				
 
-$$\approx \frac{0.2638}{s^2 - 6.807}....(6)$$
+$$\approx \frac{0.2638}{s^2 - 6.807} \tag 6$$
 
 In equations (5) and (6) above, cancellations do not cause any
 internal stability problem because the cancelled modes are
@@ -166,18 +166,18 @@ stabilisation.
 Now, the dc motor is used to convert the control voltage <span class="fontCss2">U</span> to force <span class="fontCss2">F</span> is represented by only a gain block of gain = 15.
 Hence, the transfer functions <span class="fontCss2">X</span>(<span class="fontCss">s</span>)/<span class="fontCss2">U</span>(<span class="fontCss">s</span>) and <span class="fontCss2">&theta;</span>(<span class="fontCss">s</span>)/<span class="fontCss2">U</span>(<span class="fontCss">s</span>) become -
 
-$$\frac{X(s)}{U(s)} \triangleq \frac{b_1}{s^2} = \frac{5.841}{s^2}...(7)$$
+$$\frac{X(s)}{U(s)} \triangleq \frac{b_1}{s^2} = \frac{5.841}{s^2} \tag 7$$
 
-$$\frac{\theta(s)}{U(s)} \triangleq \frac{b_2}{s^2 - a^2} = \frac{3.957}{s^2 - 6.807}...(8)$$
+$$\frac{\theta(s)}{U(s)} \triangleq \frac{b_2}{s^2 - a^2} = \frac{3.957}{s^2 - 6.807} \tag 8$$
 
 
 <br>
-<p><b>Two loop PID controller:</b></p>
+<p><b>Two loop PID controller</b></p>
 
 The two-loop PID controller to be employed for the cart–pendulum system is shown in Fig. 4. Let the two PID controllers be
 
-$$C_1 = \frac{k^1_d s^2 +k^1_p s +k^1_i}{s}...(9)$$
-$$C_2 = \frac{k^2_d s^2 +k^2_p s +k^2_i}{s}...(10)$$
+$$C_1 = \frac{k^1_d s^2 +k^1_p s +k^1_i}{s} \tag 9$$
+$$C_2 = \frac{k^2_d s^2 +k^2_p s +k^2_i}{s} \tag {10}$$
 
 $$where \ k^1_p \ denotes \ proportional \ gain \ for \ C_1$$
 $$ \ k^1_i \ denotes \ integral \ gain \ for \ C_1$$
@@ -189,19 +189,19 @@ $$ \ k^2_d \ denotes \ derivative \ gain \ for \ C_2$$
 
 With the above controllers the characteristic equation for the control scheme presented in Fig. 4 becomes,
 
-$$1 - P_1C_1 + P_2C_2 = 0....(11)$$
+$$1 - P_1C_1 + P_2C_2 = 0 \tag {11}$$
 
 Substituting <span class="fontCss2">P</span><sub>1</sub>, <span class="fontCss2">P</span><sub>2</sub> (from (7) and (8)), and <span class="fontCss2">C</span><sub>1</sub>, <span class="fontCss2">C</span><sub>2</sub></span> (from (9) and (10)) in (11), we get
 
-$$1 - (\frac{b_1}{s^2}\frac{k^1_d s^2 +k^1_p s +k^1_i}{s})+ (\frac{b_2}{s^2 - a^2}\frac{k^2_d s^2 +k^2_p s +k^2_i}{s}) = 0.....(12)$$
+$$1 - (\frac{b_1}{s^2}\frac{k^1_d s^2 +k^1_p s +k^1_i}{s})+ (\frac{b_2}{s^2 - a^2}\frac{k^2_d s^2 +k^2_p s +k^2_i}{s}) = 0 \tag {12}$$
 
 which yields 
 
-$$s^5 + ( -b_1 k^1_d + b_2 k^2_d )s^4 + ( -a^2 - b_1 k^1_p + b_2 k^2_p )s^3 + ( -b_1 k^1_i + a^2b_1k^1_d + b_2k^2_i )s^2 + ( a^2b_1k^1_p )s + ( a^2b_1k^1_i ) = 0....(13)$$
+$$s^5 + ( -b_1 k^1_d + b_2 k^2_d )s^4 + ( -a^2 - b_1 k^1_p + b_2 k^2_p )s^3 + ( -b_1 k^1_i + a^2b_1k^1_d + b_2k^2_i )s^2 + ( a^2b_1k^1_p )s + ( a^2b_1k^1_i ) = 0 \tag {13}$$
 
 Since the above characteristic equation is of fifth order, let the desired characteristic equation be
 
-$$s^5 + p_1s^4 + p_2s^3 + p_3s^2 + p_4s + p_5 = 0.....(14)$$
+$$s^5 + p_1s^4 + p_2s^3 + p_3s^2 + p_4s + p_5 = 0 \tag {14}$$
 
 Comparing the coefficients of (13) and (14) the following matrix equation is obtained
 
@@ -227,7 +227,7 @@ p_2 + a^2\newline
 p_3\newline
 p_4\newline
 p_5\newline
-\end{array}\right] \ .....(15)$$
+\end{array}\right] \ \tag {15}$$
 
 
 
@@ -240,18 +240,18 @@ p_5\newline
 The LQR is an optimal state feedback controller designed to minimise a particular quadratic performance index, which takes care of the design constraints. For an LTI system,<br/>
 
 $$\dot{X}= AX + BU$$
-$$Y=CX  ....(16)$$
+$$Y=CX  \tag {16}$$
 
 The performance index is taken as,
-$$J = \frac{1}{2}\int_{0}^{\infty}\{X^TQX + U^TRU \}dt ....(17)$$
+$$J = \frac{1}{2}\int_{0}^{\infty}\{X^TQX + U^TRU \}dt \tag {17}$$
 
 where, <i style="font-family:'century'">Q</i> is positive semi-definite (or positive definite) and 
 <span class="fontCss2">R</span> is positive definite. The minimisation of <span class="fontCss2">J</span> is obtained by solving the algebraic Riccati equation –
 
-$$A^TP+PA-PBR^{-1}B^TP+Q = 0 ......(18)$$
+$$A^TP+PA-PBR^{-1}B^TP+Q = 0 \tag {18}$$
 The optimal state feedback gain vector,
 
-$$K = -R^{-1}B^TP .....(19)$$
+$$K = -R^{-1}B^TP \tag {19}$$
 
 Now for the inverted pendulum system, the above LQR design is carried out. Substituting the system parameters
 value in (3) and (4) and then comparing these equations with (16) we get,
@@ -273,7 +273,7 @@ B = \ \left[\begin{array}{cc}
 C = \ \left[\begin{array}{cc}
 1 & 0 & 0 & 0\newline
 0 & 0 & 1 & 0 \newline
-\end{array}\right] \ .....(20)$$
+\end{array}\right] \ \tag {20}$$
 
 
 
@@ -283,7 +283,7 @@ such that  <span class="fontCss">q</span><sub>1</sub> >> <span class="fontCss">q
 
 The optimal state feedback control gains are then found to be –
 
-$$K = [-2.2361 \ -2.7209 \ 17.5208 \ 6.7791]^T....(21)$$
+$$K = [-2.2361 \ -2.7209 \ 17.5208 \ 6.7791]^T \tag {21}$$
 
 $$where \ q_1, \ q_2, \ q_3, \ q_4 \ are \ the \ weights \ on \ cart \ position \ (x), \ cart \ velocity \ (\dot{x}), \ pendulum$$
 $$ angle \ (\theta) \ and \ pendulum \ angular \ velocity \ (\dot{\theta}) \ respectively.$$
@@ -316,7 +316,7 @@ k^2_i\newline
 871.3\newline
 1721.8\newline
 1343.7\newline
-\end{array}\right] \ .....(22)$$
+\end{array}\right] \ \tag {22}$$
 
 				
 
@@ -335,7 +335,7 @@ $$k^2_p =120.9 $$
 $$k^2_i = 247.43$$
 
 <br>
-<b>Application:</b><br/>
+<b>Application</b><br/>
 <ul>
 <li>The Segway</li>
 <li>The human posture systems</li>
